@@ -28,7 +28,7 @@ jobs:
       - name: Get published version
         id: published
         run: |
-          PUBLISHED=$(vsce show hsaeed3.zyx-themes 2>/dev/null | grep -oP 'Version:\s+\K[0-9]+\.[0-9]+\.[0-9]+' | head -1) || true
+          PUBLISHED=$(vsce show hsaeed3.zyx-themes 2>/dev/null | grep -oP '^\s+\K[0-9]+\.[0-9]+\.[0-9]+(?=\s+\w+ \d+)' | head -1) || true
           echo "version=$PUBLISHED" >> $GITHUB_OUTPUT
 
       - name: Check if newer
@@ -50,6 +50,10 @@ jobs:
             echo "Local: $LOCAL | Published: $PUBLISHED | Should release: $IS_NEWER"
           fi
 
+      - name: Login to VS Code Marketplace
+        if: steps.check.outputs.should_release == 'true'
+        run: vsce login hsaeed3 -p ${{ secrets.VSCE_PAT }}
+
       - name: Package extension
         if: steps.check.outputs.should_release == 'true'
         run: vsce package
@@ -57,8 +61,6 @@ jobs:
       - name: Publish to VS Code Marketplace
         if: steps.check.outputs.should_release == 'true'
         run: vsce publish
-        env:
-          VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
       - name: Publish to Open VSX
         if: steps.check.outputs.should_release == 'true'
