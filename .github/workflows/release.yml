@@ -52,7 +52,7 @@ jobs:
 
       - name: Login to VS Code Marketplace
         if: steps.check.outputs.should_release == 'true'
-        run: vsce login hsaeed3 -p ${{ secrets.VSCE_PAT }}
+        run: echo "${{ secrets.VSCE_PAT }}" | vsce login hsaeed3
 
       - name: Package extension
         if: steps.check.outputs.should_release == 'true'
