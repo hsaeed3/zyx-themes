@@ -722,8 +722,8 @@
     },
     {
       "name": "Classes",
-      "scope": "entity.name.type.class, entity.name.class.identifier.namespace.type, entity.name.class, variable.other.class.js, variable.other.class.ts",
-      "settings": { "foreground": "#FFC799" }
+      "scope": "entity.name.type.class, entity.name.class.identifier.namespace.type, entity.name.class, variable.other.class.js, variable.other.class.ts, entity.name.type.class.python, meta.class.python",
+      "settings": { "foreground": "#FFC799", "fontStyle": "bold" }
     },
     {
       "name": "Builtin / support classes",
