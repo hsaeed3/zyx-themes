@@ -28,21 +28,7 @@ jobs:
       - name: Get published version
         id: published
         run: |
-          PUBLISHED=$(curl -s "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery" \
-            -H "Content-Type: application/json" \
-            -H "Accept: application/json;api-version=7.1-preview.1" \
-            --data '{"filters":[{"criteria":[{"filterType":7,"value":"hsaeed3.zyx-themes"}]}],"flags":512}' \
-            | node -e "
-              const data = [];
-              process.stdin.on('data', c => data.push(c));
-              process.stdin.on('end', () => {
-                try {
-                  const json = JSON.parse(data.join(''));
-                  const ext = json.results?.[0]?.extensions?.[0];
-                  console.log(ext?.versions?.[0]?.version ?? '');
-                } catch { console.log(''); }
-              });
-            ")
+          PUBLISHED=$(vsce show hsaeed3.zyx-themes 2>/dev/null | grep -oP 'Version:\s+\K[0-9]+\.[0-9]+\.[0-9]+' | head -1) || true
           echo "version=$PUBLISHED" >> $GITHUB_OUTPUT
 
       - name: Check if newer
