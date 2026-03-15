@@ -2,7 +2,7 @@
     "name": "zyx-themes",
     "displayName": "ZYX Themes",
     "publisher": "hsaeed3",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "repository": {
       "type": "git",
       "url": "https://github.com/hsaeed3/zyx-themes"
@@ -30,14 +30,9 @@
           "path": "./zyx-themes/zyx-light.color-theme.json"
         },
         {
-          "label": "ZYX Dark Minimal",
+          "label": "ZYX Dark Soft",
           "uiTheme": "vs-dark",
-          "path": "./zyx-themes/zyx-dark-minimal.color-theme.json"
-        },
-        {
-          "label": "ZYX Light Minimal",
-          "uiTheme": "vs",
-          "path": "./zyx-themes/zyx-light-minimal.code-theme.json"
+          "path": "./zyx-themes/zyx-dark-soft.color-theme.json"
         }
       ]
     },

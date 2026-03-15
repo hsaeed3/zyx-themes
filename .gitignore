@@ -7,6 +7,10 @@ yarn-error.log*
 lerna-debug.log*
 
 .dev/
+# these shouldnt even have been commited in the first place, im just
+# a little blind i guess
+.ruff_cache/
+.venv/
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json

@@ -1,17 +1,12 @@
 # zyx-themes
 
-A set of incredibly minimal, comfortable &amp; descriptive color themes for VSCode/Cursor
+A set of incredibly minimal, comfortable &amp; descriptive color themes for VSCode/Cursor, based on the `ZED` IDE and `One Dark` code theme.
 
 ## Introduction
 
 This extension/repository provides the following themes:
 
-- `zyx-dark`
-- `zyx-dark-minimal`
-- `zyx-light`
-- `zyx-light-minimal`
 
-The themes are split into a standard dark/light theme, and a minimal pairing. `zyx-dark` and `zyx-light` take inspiration from various color palettes and themes, with One Dark Pro being the most notable influence on syntax colors.
 
 ## Screenshots
 
