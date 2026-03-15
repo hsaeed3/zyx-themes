@@ -1,0 +1,50 @@
+{
+    "name": "zyx-themes",
+    "displayName": "ZYX Themes",
+    "publisher": "hsaeed3",
+    "version": "1.0.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/hsaeed3/zyx-themes"
+    },
+    "author": {
+      "name": "Hammad Saeed",
+      "email": "hsaeed3@gmail.com",
+      "url": "https://github.com/hsaeed3"
+    },
+    "license": "MIT",
+    "keywords": ["themes", "vscode", "cursor"],
+    "icon": "icon.png",
+    "engines": { "vscode": "^1.70.0" },
+    "categories": ["Themes"],
+    "contributes": {
+      "themes": [
+        {
+          "label": "ZYX Dark",
+          "uiTheme": "vs-dark",
+          "path": "./zyx-themes/zyx-dark.color-theme.json"
+        },
+        {
+          "label": "ZYX Light",
+          "uiTheme": "vs",
+          "path": "./zyx-themes/zyx-light.color-theme.json"
+        },
+        {
+          "label": "ZYX Dark Minimal",
+          "uiTheme": "vs-dark",
+          "path": "./zyx-themes/zyx-dark-minimal.color-theme.json"
+        },
+        {
+          "label": "ZYX Light Minimal",
+          "uiTheme": "vs",
+          "path": "./zyx-themes/zyx-light-minimal.code-theme.json"
+        }
+      ]
+    },
+    "files": [
+      "zyx-themes/*.json",
+      "icon.png",
+      "LICENSE"
+    ]
+  }
+  
