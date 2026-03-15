@@ -47,20 +47,15 @@ jobs:
               console.log(newer ? 'true' : 'false');
             ")
             echo "should_release=$IS_NEWER" >> $GITHUB_OUTPUT
-            echo "Local: $LOCAL | Published: $PUBLISHED | Should release: $IS_NEWER"
           fi
 
-      - name: Login to VS Code Marketplace
+      - name: Package and Publish to VS Code Marketplace
         if: steps.check.outputs.should_release == 'true'
-        run: echo "${{ secrets.VSCE_PAT }}" | vsce login hsaeed3
-
-      - name: Package extension
-        if: steps.check.outputs.should_release == 'true'
-        run: vsce package
-
-      - name: Publish to VS Code Marketplace
-        if: steps.check.outputs.should_release == 'true'
-        run: vsce publish
+        run: |
+          vsce package
+          vsce publish
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
       - name: Publish to Open VSX
         if: steps.check.outputs.should_release == 'true'
