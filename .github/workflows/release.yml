@@ -18,8 +18,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install vsce
-        run: npm install -g @vscode/vsce
+      - name: Install vsce and ovsx
+        run: npm install -g @vscode/vsce ovsx
 
       - name: Get local version
         id: local
@@ -58,11 +58,17 @@ jobs:
         if: steps.check.outputs.should_release == 'true'
         run: vsce package
 
-      - name: Publish to marketplace
+      - name: Publish to VS Code Marketplace
         if: steps.check.outputs.should_release == 'true'
         run: vsce publish
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
+
+      - name: Publish to Open VSX
+        if: steps.check.outputs.should_release == 'true'
+        run: ovsx publish *.vsix
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
 
       - name: Create GitHub release
         if: steps.check.outputs.should_release == 'true'
