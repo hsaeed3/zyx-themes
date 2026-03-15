@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+import functools
 from typing import (
     Any,
     Dict,
@@ -26,3 +27,7 @@ class Example:
 
     def get_user(self) -> Dict[str, Any]:
         return {"name": self.name, "age": self.age, "id": self.id}
+
+    @functools.lru_cache()
+    async def async_function(self) -> int:
+        return 2
