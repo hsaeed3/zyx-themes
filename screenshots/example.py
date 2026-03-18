@@ -3,8 +3,12 @@ import functools
 from typing import (
     Any,
     Dict,
+    TypeVar,
 )
 from uuid import UUID, uuid4
+
+
+_T = TypeVar("_T")
 
 
 @dataclass
@@ -24,6 +28,10 @@ class Example:
 
     profile: Dict[str, Any] | None = None
     """The profile of the user."""
+
+    @property
+    def full_name(self) -> str:
+        return f"{self.name} {self.age}"
 
     def get_user(self) -> Dict[str, Any]:
         return {"name": self.name, "age": self.age, "id": self.id}

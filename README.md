@@ -3,7 +3,7 @@
 A set of incredibly minimal, comfortable &amp; descriptive color themes for VSCode/Cursor, based on the `ZED` IDE and `One Dark` & `Gruvbox` code themes.
 
 > [!NOTE]
-> Contributions/modifications are **100% welcome** and very much appreciated as well. You can make any contributions in the following repository: [https://github.com/hsaeed3/zyx-themes](https://github.com/hsaeed3/zyx-themes)
+> This theme is currently untested on most languages *aside from Python & Rust*, and welcomes any suggestions/options. You can create any contributions or issues in the following repository: [https://github.com/hsaeed3/zyx-themes](https://github.com/hsaeed3/zyx-themes)
 
 ## Introduction
 
