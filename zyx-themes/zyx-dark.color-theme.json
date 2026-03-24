@@ -972,6 +972,7 @@
   "semanticTokenColors": {
     "variable": "#d8d0c0",
     "property": "#d8d0c0",
+    "property.declaration": { "bold" : true },
     "variable.readonly": { "foreground": "#DDD2BB", "bold": true },
     "parameter": { "foreground": "#DDD2BB", "italic": true },
     "decorator": { "foreground": "#82bbe8" },
@@ -1011,7 +1012,7 @@
     "module": {"foreground": "#FCD895"},
     "namespace.defaultLibrary": {"foreground": "#f87b8a" },
     "namespace.definition": { "foreground": "#FCD895", "bold": true},
-    "property.readonly": { "foreground": "#DDD2BB", "bold": true },
+    "property.classMember": { "foreground": "#DDD2BB" },
     "property.deprecated": { "foreground": "#6a6560", "strikethrough": true },
     "variable.deprecated": { "foreground": "#6a6560", "strikethrough": true },
     "parameter.declaration": { "foreground": "#e8dcc8", "italic": true },

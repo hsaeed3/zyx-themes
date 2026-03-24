@@ -6,7 +6,7 @@
     "semanticTokenColors": {
       "variable": "#e8e0d0",
       "property": "#e8e0d0",
-      "property.declaration": {"italic": false},
+      "property.declaration": { "bold" : true, "italic": false },
       "variable.readonly": { "foreground": "#e8e0d0", "bold": true },
       "parameter": { "foreground": "#c8c0b0", "italic": true },
       "decorator": { "foreground": "#a0b8c8" },
